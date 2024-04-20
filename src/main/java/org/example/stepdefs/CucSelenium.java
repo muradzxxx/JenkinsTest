@@ -15,7 +15,7 @@ public class CucSelenium {
     WebDriver driver;
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/mirzayevmr/IdeaProjects/birbank-business-web/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Murad\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--ignore-certificate-errors");
