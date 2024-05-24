@@ -38,6 +38,7 @@ public class CucSelenium {
     @And("He enters userName")
     public void he_enters_userName() {
 // Write code here that turns the phrase above into concrete actions
+
         driver.findElement(By.id("Email")).sendKeys("vishnu@vmail.com");
     }
 
