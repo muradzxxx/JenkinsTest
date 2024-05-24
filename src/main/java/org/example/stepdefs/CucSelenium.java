@@ -18,6 +18,7 @@ public class CucSelenium {
 //        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Murad\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
 //        chromeOptions.addArgument--headless");
+
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--window-size=1024,768");
@@ -37,6 +38,7 @@ public class CucSelenium {
     @And("He enters userName")
     public void he_enters_userName() {
 // Write code here that turns the phrase above into concrete actions
+
         driver.findElement(By.id("Email")).sendKeys("vishnu@vmail.com");
     }
 
