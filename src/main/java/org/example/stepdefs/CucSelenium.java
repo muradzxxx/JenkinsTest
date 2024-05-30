@@ -1,37 +1,35 @@
 package org.example.stepdefs;
 
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CucSelenium {
 
-    WebDriver driver;
-    @Before
-    public void setUp() {
-//        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Murad\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
-        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArgument--headless");
+//    private WebDriver driver;
+//
+//
+    private WebDriverWait wait;
+    private LoginPage loginPage;
+    private final WebDriver driver;
 
-        chromeOptions.addArguments("--ignore-certificate-errors");
-        chromeOptions.addArguments("--remote-allow-origins=*");
-        chromeOptions.addArguments("--window-size=1024,768");
-//        WebDriverManager.chromedriver().setup();
 
-        driver = new ChromeDriver(chromeOptions);
-//        getDriver().manage().timeouts().implicitlyWait(ofSeconds(5));
-        driver.manage().window().maximize();
+    public CucSelenium()  {
+        driver = Hooks.driver;
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        loginPage = new LoginPage(driver);
     }
+
+
     @Given("User enters url")
     public void user_enters_url() {
-        driver.get("http://demowebshop.tricentis.com/");
-        driver.findElement(By.linkText("Log in")).click();
+        loginPage.logintoSite();
+//        driver.findElement(By.linkText("Log in")).click();
 
     }
 

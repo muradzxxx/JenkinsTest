@@ -5,3 +5,4 @@ Feature: Customer login
     And He enters userName
     When He enters password
     Then Home page is displayed
+
